@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "ap-south-1"
-  access_key = "AKIAZ7LGWLETNLRA3KG5"
-  secret_key = "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"
+  access_key = "${var.aws_access_key}"
+  secret_key = "${var.aws_secret_key}"
 }
 
 
@@ -104,14 +104,14 @@ resource "aws_instance" "Kubernetes_Master" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Kubernetessubnet.id
   vpc_security_group_ids = [aws_security_group.Kubernetes.id]
-  key_name = "project"
+  key_name = "devops"
 
   tags = {
     Name = "Kubernetes_Master"
   }
 }
 
-# Create Instance
+# Create Instance 
 
 resource "aws_instance" "Kubernetes_Workernode1" {
   ami           = "ami-03cb1380eec7cc118"
@@ -119,7 +119,7 @@ resource "aws_instance" "Kubernetes_Workernode1" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Kubernetessubnet.id
   vpc_security_group_ids = [aws_security_group.Kubernetes.id]
-  key_name = "project"
+  key_name = "devops"
 
   tags = {
     Name = "Kubernetes_Workernode1"
@@ -135,7 +135,7 @@ resource "aws_instance" "Kubernetes_Workernode2" {
   associate_public_ip_address = true
   subnet_id = aws_subnet.Kubernetessubnet.id
   vpc_security_group_ids = [aws_security_group.Kubernetes.id]
-  key_name = "project"
+  key_name = "devops"
 
   tags = {
     Name = "Kubernetes_Workernode2"

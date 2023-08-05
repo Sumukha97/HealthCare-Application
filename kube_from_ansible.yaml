@@ -2,7 +2,8 @@
   tasks:
     - name: Copy deployment.yaml to Kubernetes master
       copy:
-        src: "/home/slaveadmin/workspace/Health-Care/deployment.yaml"
+        # get the source name from pwd on the jenkins pipeline
+        src: "/home/slaveadmin/workspace/HealthCare-Pipeline-Project/deployment.yaml"
         dest: "/tmp/deployment.yaml"
         remote_src: yes
 

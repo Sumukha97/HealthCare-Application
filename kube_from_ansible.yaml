@@ -4,6 +4,7 @@
       ansible.builtin.copy:
         src: "/home/slaveadmin/workspace/Health-Care/deployment.yaml"
         dest: "/tmp/deployment.yaml"
+        remote_src: yes
 
     - name: Execute kubectl create command
       shell: |

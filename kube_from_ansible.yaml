@@ -5,7 +5,6 @@
         # get the source name from pwd on the jenkins pipeline
         src: "/home/slaveadmin/workspace/HealthCare-Pipeline-Project/deployment.yaml"
         dest: "/tmp/deployment.yaml"
-        remote_src: yes
 
     - name: Execute kubectl create command
       shell: |

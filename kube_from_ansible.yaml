@@ -1,10 +1,9 @@
 - hosts: Kubernetes_Master
   tasks:
     - name: Copy deployment.yaml to Kubernetes master
-      ansible.builtin.copy:
+      copy:
         src: "/home/slaveadmin/workspace/Health-Care/deployment.yaml"
         dest: "/tmp/deployment.yaml"
-        remote_src: yes
 
     - name: Execute kubectl create command
       shell: |
